@@ -16,16 +16,16 @@ const crafted = "Criado por";
     class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-screen-2xl"
   >
     <div class="grid grid-cols-2 gap-6 md:grid-cols-1 lg:grid-cols-2">
-      <div class="col-span-full lg:col-span-1">
+      <div class="col-span-full lg:col-span-1 flex justify-center lg:block mb-7">
         <!-- Brand Logo -->
         <BrandLogo class="h-auto w-72" />
       </div>
      
-      <div class="flex gap-10">
+      <div class="col-span-full lg:col-span-1 flex gap-10 justify-center lg:justify-start">
         {
           strings.footerLinks.map((section) => (
             <div>
-              <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+              <h3 class="font-bold text-neutral-800 dark:text-neutral-200 ">
                 {section.section}
               </h3>
               <ul class="mt-3 grid space-y-3">
@@ -47,7 +47,7 @@ const crafted = "Criado por";
     </div>
 
     <div
-      class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
+      class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center justify-center sm:justify-between sm:gap-y-0"
     >
       <div class="flex items-center justify-between">
         <p class="text-sm text-neutral-600 dark:text-neutral-400">
@@ -62,7 +62,7 @@ const crafted = "Criado por";
       </div>
 
       <!-- Social Brands -->
-      <div>
+      <div class="flex justify-center lg:justify-start">
         <FooterSocialLink url={strings.socialLinks.facebook}
           ><Icon name="facebookFooter" />
         </FooterSocialLink>
