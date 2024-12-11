@@ -1,6 +1,7 @@
 ---
 // Importing necessary components
 import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
+import CardProductCategory from "@/components/ui/cards/CardProductCategory.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
@@ -93,46 +94,13 @@ const pageTitle: string = `Produtos | ${SITE.title}`;
     <section>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {materials.map((category, i) => (
-          <div class="bg-white shadow-md rounded-lg overflow-hidden h-fit">
-            <img
-              src={category.image}
-              alt={category.alt}
-              class="w-full h-48 object-cover"
-            />
-            <div class="p-6 relative">
-              <h3 class="text-xl font-semibold text-neutral-800 mb-4">
-                {category.title}
-              </h3>
-              <div class="max-h-[300px] overflow-hidden relative" id={`list-container-${i}`}>
-                <ul class="text-gray-600 space-y-2">
-                  {category.materials.map((material) => (
-                     <hr class="border-gray-100"/>
-                    <li class="text-sm">
-                      {material}
-                    </li>
-                   
-                  ))}
-                </ul>
-                {category.materials.length > MAX_MATERIALS_DISPLAYED && (
-              <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-            )}
-              </div>
-              {category.materials.length > MAX_MATERIALS_DISPLAYED && (
-                 <div class="relative text-center">
-                  <button
-                    class="mt-4 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 transition"
-                    data-toggle-btn
-                    data-index={i}
-                  >
-                    Expandir
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
+          <CardProductCategory
+            category={category}
+            index={i}
+            maxMaterialsDisplayed={MAX_MATERIALS_DISPLAYED}
+          />
         ))}
       </div>
-      
     </section>
   </div>
   <!--Features statistics section-->

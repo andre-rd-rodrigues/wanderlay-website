@@ -7,11 +7,10 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Import necessary images - you'll need to add these images to your project
-import storefront from "@images/industry.avif";
-import founder from "@images/industry.avif";
-import teamWorking from "@images/industry.avif";
-import warehouse from "@images/industry.avif";
-import customerService from "@images/industry.avif";
+import founder from "@images/founder.avif";
+import underConstruction from "@images/under-construction-2.avif";
+import warehouse from "@images/machines.avif";
+import customerService from "@images/construction-workers.avif";
 import { CONTACT, SITE } from "@data/constants";
 import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 
@@ -37,18 +36,16 @@ const articles: Article[] = [
     title: "História",
     subTitle:
       "Fundada por Wanderley de Carvalho, a 'As Marcas Mais Famosas' nasceu do sonho de fornecer materiais de construção de alta qualidade com um atendimento diferenciado. Desde nossa fundação, mantemos o compromisso com a excelência e a satisfação do cliente, crescendo constantemente e nos tornando referência no setor.",
-    single: false,
-    imgOne: storefront,
-    imgOneAlt: "Fachada da loja As Marcas Mais Famosas",
-    imgTwo: founder,
-    imgTwoAlt: "Wanderley de Carvalho, fundador da empresa",
+    imgOne: founder,
+    imgOneAlt: "Wanderley de Carvalho, fundador da empresa",
+    single: true,
   },
   {
     isRightSection: false,
     title: "Missão e Valores",
     subTitle:
-      "Sob a liderança de Wanderley de Carvalho, nossa missão é ser mais que uma loja de materiais de construção. Buscamos ser parceiros no sucesso de cada projeto, oferecendo produtos de qualidade, conhecimento técnico e suporte personalizado. Nossos valores fundamentais são integridade, excelência e compromisso com o cliente.",
-    img: teamWorking,
+      "Sob a liderança de Wanderley de Carvalho, nossa missão é ser mais do que intermediário de materiais de construção. Busco ser parceiro no sucesso de cada projeto, oferecendo produtos de qualidade, conhecimento técnico e suporte personalizado. Nossos valores fundamentais são integridade, excelência e compromisso com o cliente.",
+    img: underConstruction,
     imgAlt: "Equipe trabalhando no atendimento ao cliente",
   },
   {

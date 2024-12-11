@@ -1,0 +1,51 @@
+---
+interface Props {
+  category: {
+    image: string;
+    alt: string;
+    title: string;
+    materials: string[];
+  };
+  index: number;
+  maxMaterialsDisplayed: number;
+}
+
+const { category, index, maxMaterialsDisplayed } = Astro.props;
+---
+
+<div class="bg-neutral-50 dark:bg-neutral-700 shadow-md rounded-lg overflow-hidden h-fit">
+  <img
+    src={category.image}
+    alt={category.alt}
+    class="w-full h-48 object-cover"
+  />
+  <div class="p-6 relative">
+    <h3 class="text-xl font-semibold text-neutral-800 dark:text-neutral-100 mb-4">
+      {category.title}
+    </h3>
+    <div class="max-h-[300px] overflow-hidden relative" id={`list-container-${index}`}>
+      <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+        {category.materials.map((material) => (
+          <>
+            <hr class="border-gray-100 dark:border-neutral-600"/>
+            <li class="text-sm">{material}</li>
+          </>
+        ))}
+      </ul>
+      {category.materials.length > maxMaterialsDisplayed && (
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-neutral-700 to-transparent pointer-events-none"/>
+      )}
+    </div>
+    {category.materials.length > maxMaterialsDisplayed && (
+      <div class="relative text-center">
+        <button
+          class="mt-4 px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 rounded hover:bg-blue-600 dark:hover:bg-blue-400 dark:text-white transition"
+          data-toggle-btn
+          data-index={index}
+        >
+          Expandir
+        </button>
+      </div>
+    )}
+  </div>
+</div>
