@@ -1,29 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Tire suas dúvidas sobre nossos materiais e serviços, e receba respostas claras e objetivas.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "Quais tipos de materiais estão disponíveis no catálogo?",
+      "answer": "Nosso catálogo inclui uma ampla variedade de materiais, como parafusos, metais, tubos, pregos e outros itens essenciais para construção. Trabalhamos com marcas renomadas para garantir qualidade em cada produto."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "Posso solicitar materiais personalizados para meu projeto?",
+      "answer": "Com certeza! Atendemos demandas específicas e podemos ajudá-lo a encontrar os materiais certos para o seu projeto. Entre em contato com nossa equipe para verificar disponibilidade e condições."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "Existem descontos para compras em grande quantidade?",
+      "answer": "Sim, oferecemos descontos exclusivos para pedidos em grande quantidade. A porcentagem de desconto varia conforme o volume do pedido. Fale conosco para uma proposta personalizada."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "Que tipo de suporte ao cliente vocês oferecem?",
+      "answer": "Todos os nossos clientes recebem suporte dedicado por e-mail e whatsapp. Além disso, oferecemos orientações técnicas sobre nossos produtos para garantir que você obtenha o melhor resultado em seus projetos."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "Vocês oferecem garantia para os materiais?",
+      "answer": "Sim, todos os produtos em nosso catálogo possuem garantia contra defeitos de fabricação. Caso você identifique algum problema com o material, entre em contato conosco para solicitar a troca ou devolução."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "Vocês oferecem materiais para grandes obras ou projetos comerciais?",
+      "answer": "Sim, fornecemos materiais para projetos de qualquer escala, incluindo grandes construções comerciais. Nossa equipe está preparada para atender suas necessidades com soluções personalizadas e materiais de alta qualidade. Solicite um orçamento agora mesmo."
     }
   ]
 }

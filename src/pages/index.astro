@@ -13,7 +13,6 @@ import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro"
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
-import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
@@ -52,14 +51,14 @@ const avatarSrcs: Array<string> = [
 
   <FeaturesGeneral
     title="Soluções Sob Medida"
-    subTitle="Com Wanderley de Carvalho, você encontra produtos de alta qualidade e serviços especializados para superar os desafios do dia a dia na construção civil. Conte com nossa dedicação para alcançar resultados excepcionais."
+    subTitle="Connosco, você encontra produtos de alta qualidade e serviços especializados para superar os desafios do dia a dia na construção civil. Conte com nossa dedicação para alcançar resultados excepcionais."
     src={featureImage}
     alt="Produtos variados em destaque"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Personalize os Serviços de <span class="text-bostonBlue-500 dark:text-bostonBlue-400">Wanderley de Carvalho</span> para Atender às Suas Necessidades.`
+  title=`Encontre Soluções Personalizadas com <span class="text-bostonBlue-500 dark:text-bostonBlue-400">As Marcas Mais Famosas</span> para Todos os Seus Projetos de Construção.`
     tabs={[
       {
         heading: "Ferramentas de Alta Qualidade",
@@ -92,7 +91,7 @@ const avatarSrcs: Array<string> = [
 
   <TestimonialsSection
     title="O Parceiro Ideal para Sua Obra"
-    subTitle="Com Wanderley de Carvalho, você constrói com confiança e qualidade. Conheça a opinião de nossos clientes satisfeitos."
+    subTitle="Connosco você constrói com confiança e qualidade. Conheça a opinião de nossos clientes satisfeitos."
     testimonials={[
       {
         content:
@@ -125,8 +124,6 @@ const avatarSrcs: Array<string> = [
       },
     ]}
   />
-
-  <PricingSection pricing={pricing} />
 
   <FAQ
     title="Dúvidas<br />frequentes"
