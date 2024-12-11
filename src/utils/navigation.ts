@@ -4,25 +4,33 @@ const navBarLinks = [
   { name: "Produtos", url: "/produtos" },
   { name: "Serviços", url: "/servicos" },
   { name: "Sobre", url: "/sobre" },
-  { name: "Contactos", url: "/contactos" },
+  { name: "Contatos", url: "/contactos" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Empresa",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Sobre nós", url: "/sobre" },
+      { name: "Produtos", url: "/produtos" },
+      { name: "Serviços", url: "/servicos" },
+      { name: "Contatos", url: "/contactos" },
     ],
   },
   {
-    section: "Company",
+    section: "Produtos",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Construção Civil", url: "/produtos" },
+      { name: "Indústria", url: "/produtos" },
+      { name: "Máquinas", url: "/produtos" },
+      { name: "Ferramentas", url: "/produtos" },
+    ],
+  },
+  {
+    section: "Informações",
+    links: [
+      { name: "FAQ", url: "/#faq" },
+      { name: "Testemunhos", url: "/produtos/#testemunhos" },
     ],
   },
 ];
@@ -32,7 +40,7 @@ const socialLinks = {
   x: "https://twitter.com/",
   github: "https://github.com/mearashadowfax/ScrewFast",
   google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  whatsApp: "https://whatsapp.com/",
 };
 
 export default {

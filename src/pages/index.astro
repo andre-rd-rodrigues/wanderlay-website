@@ -15,6 +15,7 @@ import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import { CONTACT } from "@/data_files/constants";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -30,7 +31,7 @@ const avatarSrcs: Array<string> = [
         class="text-bostonBlue-500 dark:text-bostonBlue-400">As Marcas Mais Famosas</span>`
     subTitle="Soluções completas em materiais de construção, desde parafusos até tubos, para todos os tipos de projetos."
     primaryBtn="Conheça os Produtos"
-    primaryBtnURL="/produtos"
+    primaryBtnURL={CONTACT.whatsApp}
     secondaryBtn="Entre em Contato"
     secondaryBtnURL="/contato"
     withReview={true}
@@ -40,6 +41,7 @@ const avatarSrcs: Array<string> = [
     reviews=`Baseado em mais de <span class="font-bold">1.200</span> avaliações`
     src={heroImage}
     alt="Produtos de construção em exibição"
+    icon="whatsApp"
   />
 
   <ClientsSection
@@ -131,7 +133,8 @@ const avatarSrcs: Array<string> = [
   <HeroSectionAlt
     title="Vamos Construir Juntos"
     subTitle="Encontre os melhores materiais e suporte especializado para transformar seus projetos em realidade."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    url={CONTACT.whatsApp}
+    icon="whatsApp"
   />
 </MainLayout>
 

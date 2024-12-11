@@ -12,7 +12,8 @@ import founder from "@images/industry.avif";
 import teamWorking from "@images/industry.avif";
 import warehouse from "@images/industry.avif";
 import customerService from "@images/industry.avif";
-import { SITE } from "@data/constants";
+import { CONTACT, SITE } from "@data/constants";
+import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 
 interface Article {
   isRightSection: boolean;
@@ -71,13 +72,13 @@ const pageTitle: string = `Sobre | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "@id": "https://asmarcasmaisfamosas.com.br/sobre",
-    "url": "https://asmarcasmaisfamosas.com.br/sobre",
+    "@id": `${SITE.url}/sobre`,
+    "url": `${SITE.url}/sobre`,
     "name": "Sobre As Marcas Mais Famosas | Nossa História e Valores",
     "description": "Conheça a história da As Marcas Mais Famosas, liderada por Wanderley de Carvalho, e descubra como nos tornamos referência em materiais de construção.",
     "isPartOf": {
         "@type": "WebSite",
-        "url": "https://asmarcasmaisfamosas.com.br",
+        "url": `${SITE.url}`,
         "name": "As Marcas Mais Famosas",
         "description": "Materiais de construção de alta qualidade para atender às necessidades do seu projeto."
     },
@@ -88,8 +89,9 @@ const pageTitle: string = `Sobre | ${SITE.title}`;
     title="Integridade, Excelência e Compromisso"
     subTitle="Há mais de duas décadas, a As Marcas Mais Famosas tem sido sinônimo de qualidade e confiança no setor de materiais de construção. Sob a liderança de Wanderley de Carvalho, construímos uma trajetória baseada na excelência e no compromisso com nossos clientes."
     btnExists={true}
-    btnTitle="Fale Conosco"
-    btnURL="/contato"
+    btnTitle="Entrar em Contato"
+    btnURL={CONTACT.whatsApp}
+    icon="whatsApp"
   />
 
   {
@@ -141,4 +143,11 @@ const pageTitle: string = `Sobre | ${SITE.title}`;
       },
     ]}
   />
+
+  <HeroSectionAlt
+title="Vamos Construir Juntos"
+subTitle="Encontre os melhores materiais e suporte especializado para transformar seus projetos em realidade."
+url={CONTACT.whatsApp}
+icon="whatsApp"
+/>
 </MainLayout>

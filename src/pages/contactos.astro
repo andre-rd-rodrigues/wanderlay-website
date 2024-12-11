@@ -4,7 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import { SITE } from "@data/constants";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = `Contatos | ${SITE.title}`;
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
@@ -13,20 +13,21 @@ const pageTitle: string = `Contact | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    "url": "https://screwfast.uk/contact",
-    "name": "Contact Us | ScrewFast",
+    "@id": `${SITE.url}/contatos`,
+    "url": `${SITE.url}/contatos`,
+    "name": "Fale Conosco | As Marcas Mais Famosas",
     "description":
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+      "Tem dúvidas ou precisa de ajuda com seu projeto? Entre em contato e juntos encontraremos as melhores soluções com nossos materiais e serviços especializados.",
     "isPartOf": {
       "@type": "WebSite",
-      "url": "https://screwfast.uk",
-      "name": "ScrewFast",
+      "url": `${SITE.url}`,
+      "name": "As Marcas Mais Famosas",
       "description":
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "As Marcas Mais Famosas oferece materiais de construção de alta qualidade e serviços especializados para atender às suas necessidades em qualquer projeto.",
     },
-    "inLanguage": "en-US"
+    "inLanguage": "pt-BR"
   }}
 >
   <ContactSection />
 </MainLayout>
+

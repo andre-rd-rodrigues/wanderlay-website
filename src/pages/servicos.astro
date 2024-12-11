@@ -15,7 +15,8 @@ import aerialView from "@images/aerial-view.avif";
 import usingTools from "@images/using-tools.avif";
 import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
-import { SITE } from "@data/constants";
+import { CONTACT, SITE } from "@data/constants";
+import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 
 interface Article {
   isRightSection: boolean;
@@ -97,13 +98,13 @@ const pageTitle: string = `Serviços | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://asmarcasmaisfamosas.com.br/servicos",
-    "url": "https://asmarcasmaisfamosas.com.br/servicos",
+    "@id": `${SITE.url}/servicos`,
+    "url": `${SITE.url}/servicos`,
     "name": "Serviços de Consultoria Especializada | As Marcas Mais Famosas",
     "description": "Unindo expertise à sua visão, 'As Marcas Mais Famosas' oferece serviços excepcionais e soluções completas no setor de materiais de construção, desde a consultoria até a conclusão do projeto.",
     "isPartOf": {
         "@type": "WebSite",
-        "url": "https://asmarcasmaisfamosas.com.br",
+        "url": `${SITE.url}`,
         "name": "As Marcas Mais Famosas",
         "description": "Materiais de construção de alta qualidade para atender às necessidades do seu projeto."
     },
@@ -116,7 +117,8 @@ const pageTitle: string = `Serviços | ${SITE.title}`;
   subTitle="Na 'As Marcas Mais Famosas', temos orgulho em oferecer soluções completas e um serviço excepcional no setor de materiais de construção. Nossa equipe experiente está dedicada a apoiar seu projeto desde o início até a conclusão, com uma variedade de serviços especializados."
   btnExists={true}
   btnTitle="Entre em Contato"
-  btnURL="#"
+  btnURL={CONTACT.whatsApp}
+  icon="whatsApp"
 />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
@@ -174,6 +176,14 @@ const pageTitle: string = `Serviços | ${SITE.title}`;
       description: "crescimento de clientes ano após ano",
     },
   ]}
+/>
+
+
+<HeroSectionAlt
+title="Vamos Construir Juntos"
+subTitle="Encontre os melhores materiais e suporte especializado para transformar seus projetos em realidade."
+url={CONTACT.whatsApp}
+icon="whatsApp"
 />
 
 </MainLayout>

@@ -1,12 +1,12 @@
 ---
 // Importing necessary components
+import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import { CONTACT, SITE } from "@data/constants";
 import materials from "@data/materials.json";
-import { SITE } from "@data/constants";
-import AccordionItem from "@components/ui/blocks/AccordionItem.astro";
 
 const MAX_MATERIALS_DISPLAYED =8;
 
@@ -56,13 +56,13 @@ const pageTitle: string = `Produtos | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://asmarcasmaisfamosas.com.br/produtos",
-    "url": "https://asmarcasmaisfamosas.com.br/produtos",
+    "@id": `${SITE.url}/produtos`,
+    "url": `${SITE.url}/produtos`,
     "name": "Materiais de Construção | As Marcas Mais Famosas",
     "description": "Descubra a durabilidade e a precisão dos materiais de construção fornecidos por 'As Marcas Mais Famosas', ideais para profissionais e entusiastas.",
     "isPartOf": {
       "@type": "WebSite",
-      "url": "https://asmarcasmaisfamosas.com.br",
+      "url": `${SITE.url}`,
       "name": "As Marcas Mais Famosas",
       "description": "Materiais de construção de alta qualidade para atender às necessidades do seu projeto."
     },
@@ -87,7 +87,7 @@ const pageTitle: string = `Produtos | ${SITE.title}`;
           )
         }
       </div>
-      <PrimaryCTA title="Ver Testemunhos" url="#testimonials" noArrow={true} />
+      <PrimaryCTA title="Ver Testemunhos" url="#testemunhos" noArrow={true} />
     </div>
     <!--Products-->
     <section>
@@ -149,6 +149,14 @@ const pageTitle: string = `Produtos | ${SITE.title}`;
   <TestimonialsSectionAlt
     title="Testemunhos"
     testimonials={testimonials}
+  />
+
+  <!-- Contact section -->
+  <HeroSectionAlt
+    title="Vamos Construir Juntos"
+    subTitle="Encontre os melhores materiais e suporte especializado para transformar seus projetos em realidade."
+    url={CONTACT.whatsApp}
+    icon="whatsApp"
   />
 </MainLayout>
 
