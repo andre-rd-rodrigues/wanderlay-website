@@ -2,66 +2,53 @@
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import CardSmall from "@components/ui/cards/CardSmall.astro";
-import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
-
-// Importing necessary functions from Astro
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import materials from "@data/materials.json";
 import { SITE } from "@data/constants";
+import AccordionItem from "@components/ui/blocks/AccordionItem.astro";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return id.startsWith("en/");
-  })
-).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id,
-);
+const makeId = (base: any, index: any) => `${base}${index + 1}`;
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "Produtos";
 const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "Descubra a durabilidade e a precisão dos materiais fornecidos por 'As Marcas Mais Famosas', ideais para profissionais e entusiastas. Cada produto é selecionado com rigor para oferecer o máximo desempenho e garantir que você tenha o material certo para cada etapa do seu projeto.";
 
-// Testimonial data that will be rendered in the component
 const testimonials = [
-  // First testimonial data
+  // Primeiro depoimento
   {
     content:
-      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
-    author: "Jason Clark",
-    role: "Site Foreman | TopBuild",
+      " \"Desde que começamos a adquirir materiais de 'As Marcas Mais Famosas', a eficiência em nossas obras melhorou significativamente. A qualidade dos parafusos e tubos é incomparável. É inspirador trabalhar com uma empresa que entende as demandas diárias do setor.\" ",
+    author: "Carlos Almeida",
+    role: "Engenheiro Civil | Construtora Forte",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
+    avatarAlt: "Engenheiro civil sorrindo",
   },
-  // Second testimonial data
+  // Segundo depoimento
   {
     content:
-      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
-    author: "Maria Gonzalez",
-    role: "Interior Designer | Creative Spaces",
+      " \"Como designer de interiores, estou sempre em busca de materiais de alta qualidade que complementem meus projetos. A variedade de pregos e metais fornecidos por 'As Marcas Mais Famosas' transformou minha forma de trabalhar, oferecendo a combinação perfeita de qualidade e variedade. O atendimento ao cliente foi um diferencial incrível!\" ",
+    author: "Ana Souza",
+    role: "Designer de Interiores | Espaços Criativos",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
+    avatarAlt: "Designer de interiores trabalhando",
   },
-  // Third testimonial data
+  // Terceiro depoimento
   {
     content:
-      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-    author: "Richard Kim",
-    role: "Master Carpenter | WoodWright",
+      " \"Sou carpinteiro profissional há mais de 15 anos e posso afirmar que os materiais de 'As Marcas Mais Famosas' são dos melhores que já usei. A resistência e a durabilidade dos metais são excepcionais, e o suporte prestado pela equipe faz toda a diferença no sucesso do meu trabalho.\" ",
+    author: "Roberto Lima",
+    role: "Carpinteiro | Madeiras Nobres",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
+    avatarAlt: "Carpinteiro com ferramentas de trabalho",
   },
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `Produtos | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -69,17 +56,17 @@ const pageTitle: string = `Products | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/products",
-    "url": "https://screwfast.uk/products",
-    "name": "Hardware Tools | ScrewFast",
-    "description": "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+    "@id": "https://asmarcasmaisfamosas.com.br/produtos",
+    "url": "https://asmarcasmaisfamosas.com.br/produtos",
+    "name": "Materiais de Construção | As Marcas Mais Famosas",
+    "description": "Descubra a durabilidade e a precisão dos materiais de construção fornecidos por 'As Marcas Mais Famosas', ideais para profissionais e entusiastas.",
     "isPartOf": {
       "@type": "WebSite",
-      "url": "https://screwfast.uk",
-      "name": "ScrewFast",
-      "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+      "url": "https://asmarcasmaisfamosas.com.br",
+      "name": "As Marcas Mais Famosas",
+      "description": "Materiais de construção de alta qualidade para atender às necessidades do seu projeto."
     },
-    "inLanguage": "en-US"
+    "inLanguage": "pt-BR"
   }}
 >
   <div
@@ -100,36 +87,55 @@ const pageTitle: string = `Products | ${SITE.title}`;
           )
         }
       </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+      <PrimaryCTA title="VerTestemunhos" url="#testimonials" noArrow={true} />
     </div>
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
-          } else {
-            return <CardWide product={product} />;
-          }
-        })
-      }
+    <!--Products-->
+    <section>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+        {materials.map((category, i) => (
+          <div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+            <img
+              src={category.image}
+              alt={category.alt}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-4">
+                {category.title}
+              </h3>
+              <ul class="text-gray-600 space-y-2">
+                {category.materials.map((material) => (
+                  <li class="text-sm">
+                    {material}
+                  </li>
+                  <hr/>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+        </div>
     </section>
   </div>
   <!--Features statistics section-->
   <FeaturesStatsAlt
-    title="Why Choose ScrewFast?"
-    subTitle="Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
-    benefits={[
-      "Robust and reliable tools for long-lasting performance.",
-      "Innovative solutions tailored to modern construction needs.",
-      "Customer support dedicated to your project's success.",
-    ]}
-  />
+  title="Por que escolher a nossa empresa?"
+  subTitle="Transforme suas ideias em resultados concretos com os materiais fornecidos por 'As Marcas Mais Famosas'. Seja começando com um simples esboço ou enfrentando um grande projeto de construção, nossos produtos são selecionados para garantir qualidade e confiança em cada etapa."
+  benefits={[
+    "Materiais robustos e confiáveis para desempenho duradouro.",
+    "Soluções inovadoras adaptadas às necessidades modernas da construção.",
+    "Suporte ao cliente dedicado ao sucesso do seu projeto.",
+  ]}
+/>
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="What Our Customers Say"
+    title="Testemunhos"
     testimonials={testimonials}
   />
 </MainLayout>
+
+<script>
+  import "@preline/accordion/index.js";
+</script>
