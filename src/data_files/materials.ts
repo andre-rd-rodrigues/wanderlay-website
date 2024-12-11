@@ -1,21 +1,26 @@
-[
+import aerialView from "@/images/aerial-view.avif";
+import industry from "@/images/industry.avif";
+import machines from "@/images/machines.avif";
+import tools from "@/images/tools.avif";
+
+export const materials = [
   {
-    "title": "Construção Civil",
-    "materials": [
+    title: "Construção Civil",
+    materials: [
       "Vergalhões para Construção",
       "Fio Máquina",
       "Arames",
       "Pregos",
       "Telas",
       "Treliças",
-      "Telas Coluna"
+      "Telas Coluna",
     ],
-    "image": "src/images/aerial-view.avif",
-    "alt": "Construção civil"
+    image: aerialView,
+    alt: "Construção civil",
   },
   {
-    "title": "Indústria",
-    "materials": [
+    title: "Indústria",
+    materials: [
       "Tubos",
       "Chapas de aço",
       "Bobinas",
@@ -25,27 +30,27 @@
       "Barras Chatas",
       "Barras quadradas",
       "Barras Redondas",
-      "Cantoneiras"
+      "Cantoneiras",
     ],
-    "image": "src/images/industry.avif",
-    "alt": "Indústria"
+    image: industry,
+    alt: "Indústria",
   },
   {
-    "title": "Máquinas",
-    "materials": [
+    title: "Máquinas",
+    materials: [
       "Eletrodos",
       "Abrasivos",
       "Máquinas de solda",
       "Varetas",
       "Arames",
-      "Insumos e Acessórios"
+      "Insumos e Acessórios",
     ],
-    "image": "src/images/machines.avif",
-    "alt": "Máquinas"
+    image: machines,
+    alt: "Máquinas",
   },
   {
-    "title": "Ferramentas",
-    "materials": [
+    title: "Ferramentas",
+    materials: [
       "Parafusadeiras",
       "Furadeiras, marteletes e chaves de impacto",
       "Misturados de acessórios",
@@ -66,9 +71,9 @@
       "Linha gourmet",
       "Camping",
       "Sola",
-      "Bauma"
+      "Bauma",
     ],
-    "image": "src/images/tools.avif",
-    "alt": "Ferramentas"
-  }
-]
+    image: tools,
+    alt: "Ferramentas",
+  },
+];
