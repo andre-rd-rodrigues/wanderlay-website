@@ -19,7 +19,7 @@ export default {
         50: "#f5f8f9",
         100: "#e8f0f2",
         200: "#d1e1e5",
-        300: "#b0ccd3",
+        300: "#4A6B9A",
         400: "#7ca4b1",
         500: "#3b8fab",
       }, // Accent colors, used mainly for star color, heading and buttons
