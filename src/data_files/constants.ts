@@ -1,10 +1,10 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "As Marcas Mais Famosas",
+  title: "Marcas Famosas",
   tagline: "Materiais de Construção de Alta Qualidade",
   description:
-    "As Marcas Mais Famosas oferece materiais de construção de primeira linha para atender às necessidades de todos os seus projetos. Explore nosso catálogo e entre em contato para garantir qualidade e confiabilidade em cada etapa da sua obra.",
+    "Marcas Famosas oferece materiais de construção de primeira linha para atender às necessidades de todos os seus projetos. Explore nosso catálogo e entre em contato para garantir qualidade e confiabilidade em cada etapa da sua obra.",
   description_short:
     "Materiais de construção de alta qualidade para atender às necessidades do seu projeto.",
   url: "https://asmarcasmaisfamosas.com.br",

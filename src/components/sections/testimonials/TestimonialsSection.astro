@@ -28,6 +28,7 @@ type Testimonial = {
 type StatProps = {
   count: string;
   description: string;
+  icon: string;
 };
 ---
 
@@ -66,10 +67,9 @@ type StatProps = {
         <ul
           class="grid grid-cols-2 divide-x-2 divide-y-2 divide-neutral-300 overflow-hidden dark:divide-neutral-700"
         >
-          <!-- Generate a list item for each stat in the statistics array by mapping over the array. -->
           {
             statistics.map((stat, index) => (
-            <StatsGrid count={stat.count} description={stat.description} index={index}/>
+            <StatsGrid count={stat.count} description={stat.description} icon={stat.icon} index={index}/>
             ))
           }
         </ul>
