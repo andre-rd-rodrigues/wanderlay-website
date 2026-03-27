@@ -3,11 +3,13 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  site: "https://wanderley.vercel.app", // 👈 Substitua pelo seu domínio final
+  adapter: vercel(),
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -24,15 +26,7 @@ export default defineConfig({
   prefetch: true,
   integrations: [
     tailwind(),
-    sitemap({
-      i18n: {
-        defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
-        locales: {
-          en: "en", // The `defaultLocale` value must present in `locales` keys
-          fr: "fr",
-        },
-      },
-    }),
+    sitemap(),
     starlight({
       title: "ScrewFast Docs",
       defaultLocale: "root",

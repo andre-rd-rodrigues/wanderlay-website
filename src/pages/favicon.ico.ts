@@ -22,7 +22,11 @@ export const GET: APIRoute = async () => {
   // Convert the image to an ICO file
   const icoBuffer = ico.encode(buffers);
 
-  return new Response(icoBuffer, {
+  const responseBuffer = (icoBuffer as Buffer).buffer.slice(
+    (icoBuffer as Buffer).byteOffset,
+    (icoBuffer as Buffer).byteOffset + (icoBuffer as Buffer).byteLength
+  ) as ArrayBuffer;
+  return new Response(responseBuffer, {
     headers: { "Content-Type": "image/x-icon" },
   });
 };
